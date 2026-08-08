@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hacker House Goa 2026 — Builder ID Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="https://img.icons8.com/external-ddara-lineal-color-ddara/64/external-coconut-drink-summer-ddara-lineal-color-ddara.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="veil"></div>
+<div class="wrap">
+
+ 
+ <header class="hero">
+
+    <!-- 2:47 PM STUDIO logo -->
+    <img
+        src="https://hhgoa.com/assets/2-47.svg"
+        alt="2:47 PM Studio"
+        class="studio-logo"
+    />
+
+    <!-- Hacker House logo -->
+    <div class="logo">
+
+        <img
+            src="https://hhgoa.com/assets/Hacker%20house.png"
+            alt="Hacker House"
+            class="hacker-house-logo"
+        />
+
+        <!-- Goa badge -->
+        <img
+            src="https://hhgoa.com/assets/goa_hindi.svg"
+            alt="Goa"
+            class="goa-badge"
+        />
+
+    </div>
+
+    <div class="event-details">
+    <p>GOA, INDIA&nbsp;&nbsp;·&nbsp;&nbsp;28 – 31 OCT 2026</p>
+    <p>2:47 PM STUDIO</p>
+</div>
+
+    <!-- Tagline -->
+    <p class="tagline">
+       Create your personalized Builder ID Card for Hacker House Goa.
+Upload your photo, add your details, and generate a shareable card
+to post on X using <b>#FrameInGoa</b>.
+
+    </p>
+
+</header>
+<!-- 
+    Existing tagline
+    <p class="tagline">
+        Create your unique Builder ID Card for Hacker House Goa.
+        Upload a photo, customize your details, and generate a shareable
+        card to post on X with <b>#FrameInGoa</b>.
+    </p>
+
+</header> -->
+  
+  
+
+  <div class="card-shell">
+
+    <!-- STEP 1: UPLOAD -->
+    <section id="stepUpload">
+      <div class="step-label">Step 1 of 3</div>
+      <h2 class="step-title">Upload Your Photo</h2>
+      <div class="formats">JPG &nbsp;•&nbsp; PNG &nbsp;•&nbsp; WEBP &nbsp;•&nbsp; HEIC</div>
+
+      <div class="upload-box" id="dropZone">
+        <div class="upload-icon">&#9729;&#8593;</div>
+        <div class="upload-title">Click to upload or drag and drop</div>
+        <div class="upload-hint">Max 10 MB</div>
+      </div>
+      <input type="file" id="fileInput" accept="image/*">
+      <input type="file" id="cameraInput" accept="image/*" capture="user">
+
+      <div class="center">
+        <button class="btn btn-yellow" id="takePhotoBtn">&#128247;&nbsp; TAKE PHOTO</button>
+      </div>
+    </section>
+
+    <!-- STEP 2: ADJUST -->
+    <section id="stepAdjust" class="hidden">
+      <div class="step-label">Step 2 of 3</div>
+      <h2 class="step-title">Adjust Photo</h2>
+      <p class="step-sub">Make sure your face is visible</p>
+
+      <div class="adjust-frame" id="adjustFrame">
+        <canvas id="adjustCanvas" width="640" height="640"></canvas>
+      </div>
+
+      <div class="zoom-panel">
+        <div class="zoom-row"><span>ZOOM</span><span id="zoomVal">1.0x</span></div>
+        <input type="range" id="zoomSlider" min="1" max="3" step="0.01" value="1">
+        <div class="zoom-actions">
+          <button class="icon-btn" id="resetZoomBtn" title="Reset">&#8635;</button>
+          <button class="btn btn-outline" id="cancelAdjustBtn">Cancel</button>
+          <button class="btn btn-yellow" id="looksGoodBtn">&#10003;&nbsp; CONTINUE</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 3: DETAILS -->
+    <section id="stepDetails" class="hidden">
+      <div class="details-grid">
+
+        <div class="panel">
+          <div class="panel-head">
+            <h3>Your Details</h3>
+            <button class="link-btn" id="changePhotoBtn">Change Photo</button>
+          </div>
+
+          <div class="field">
+            <label>Full Name *</label>
+            <input type="text" id="fName" placeholder="Satoshi Nakamoto">
+          </div>
+          <div class="field field-row">
+            <div>
+              <label>Role</label>
+              <input type="text" id="fRole" placeholder="e.g. Developer">
+            </div>
+            <div>
+              <label>Location</label>
+              <input type="text" id="fLocation" placeholder="e.g. India">
+            </div>
+          </div>
+          <div class="field">
+            <label>Tech Stack (comma separated)</label>
+            <input type="text" id="fStack" placeholder="React, Node.js, AI, Next.js">
+          </div>
+          <div class="field field-row">
+            <div>
+              <label>Team Name</label>
+              <input type="text" id="fTeam" placeholder="e.g. Team Falcons">
+            </div>
+            <div>
+              <label>Instagram Handle</label>
+              <input type="text" id="fInsta" placeholder="@ username">
+            </div>
+          </div>
+          <div class="field field-row">
+            <div>
+              <label>LinkedIn Handle</label>
+              <input type="text" id="fLinkedin" placeholder="in/ username">
+            </div>
+            <div>
+              <label>Email Address</label>
+              <input type="email" id="fEmail" placeholder="name@domain.com">
+            </div>
+          </div>
+          <div class="field">
+            <label>Builder Title</label>
+            <div class="title-row">
+              <input type="text" id="fTitle" value="CLOUD ARCHITECT">
+              <button class="icon-btn" id="shuffleTitleBtn" title="Shuffle">&#8635;</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="preview-wrap">
+          <div class="live-tag"><span class="live-dot"></span> LIVE PREVIEW</div>
+          <canvas id="cardCanvas" width="1200" height="640"></canvas>
+        </div>
+      </div>
+
+      <div class="actions-row">
+        <button class="btn btn-ghost btn-block" id="saveAgainBtn">&#8681;&nbsp; SAVE </button>
+        <button class="btn btn-yellow btn-block" id="downloadBtn">&#8681;&nbsp; DOWNLOAD ID</button>
+        <button class="btn btn-ghost btn-block" id="postXBtn">&#120143;&nbsp; Share to X</button>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="foot">HACKER HOUSE GOA &middot; 28&ndash;31 OCT 2026 &middot; #FrameInGoa</footer>
+</div>
+
+<div class="toast" id="toast"><b id="toastTitle">Done</b><span id="toastMsg"></span></div>
+
+<script src="script.js"></script>
+</body>
+</html>
